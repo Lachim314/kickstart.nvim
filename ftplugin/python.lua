@@ -1,0 +1,2 @@
+-- Run current python file with uv
+-- vim.keymap.set('n', '<leader>cf', '<Cmd>UVRunFile<CR>', { desc = '[C]ompile (run) current [F]ile' })
