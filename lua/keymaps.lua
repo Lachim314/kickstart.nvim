@@ -31,9 +31,14 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
-vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
-vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
-vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
-vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+-- vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
+-- vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
+-- vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
+-- vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+
+vim.keymap.set('n', '<C-Up>', '<cmd>resize -2<CR>', { desc = 'Resize window up' })
+vim.keymap.set('n', '<C-Down>', '<cmd>resize +2<CR>', { desc = 'Resize window down' })
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>', { desc = 'Resize window left' })
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Resize window right' })
 
 -- vim: ts=2 sts=2 sw=2 et

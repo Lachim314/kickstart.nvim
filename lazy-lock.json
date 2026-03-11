@@ -12,6 +12,7 @@
   "mason-tool-installer.nvim": { "branch": "main", "commit": "517ef5994ef9d6b738322664d5fdd948f0fdeb46" },
   "mason.nvim": { "branch": "main", "commit": "b3689a41dd77e5294498dba9757fb22cc80cbebd" },
   "mini.nvim": { "branch": "main", "commit": "228a8c34fae1d778e895ad06e4158f65e85828bc" },
+  "moonfly": { "branch": "master", "commit": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4" },
   "neo-tree.nvim": { "branch": "main", "commit": "9130e58424ad95bf2dd8b40afbb8cf04d648638c" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-lspconfig": { "branch": "master", "commit": "336b388c272555d2ae94627a50df4c2f89a5e257" },

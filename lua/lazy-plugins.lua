@@ -390,20 +390,20 @@ require('lazy').setup({
         end,
       })
 
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if client == nil then
-            return
-          end
-          if client.name == 'ruff' then
-            -- Disable hover in favor of Pyright
-            client.server_capabilities.hoverProvider = false
-          end
-        end,
-        desc = 'LSP: Disable hover capability from Ruff',
-      })
+      -- vim.api.nvim_create_autocmd('LspAttach', {
+      --   group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+      --   callback = function(args)
+      --     local client = vim.lsp.get_client_by_id(args.data.client_id)
+      --     if client == nil then
+      --       return
+      --     end
+      --     if client.name == 'ruff' then
+      --       -- Disable hover in favor of Pyright
+      --       client.server_capabilities.hoverProvider = false
+      --     end
+      --   end,
+      --   desc = 'LSP: Disable hover capability from Ruff',
+      -- })
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
@@ -456,12 +456,12 @@ require('lazy').setup({
           settings = {
             pyright = {
               -- Using Ruff's import organizer
-              disableOrganizeImports = true,
+              -- disableOrganizeImports = true,
             },
             python = {
               analysis = {
                 -- Ignore all files for analysis to exclusively use Ruff for linting
-                ignore = { '*' },
+                -- ignore = { '*' },
               },
             },
           },
@@ -509,7 +509,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
-      servers['ruff'] = {}
+
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -563,14 +563,14 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = {
-          -- To fix auto-fixable lint errors.
-          'ruff_fix',
-          -- To run the Ruff formatter.
-          'ruff_format',
-          -- To organize the imports.
-          'ruff_organize_imports',
-        },
+        -- python = {
+        --   -- To fix auto-fixable lint errors.
+        --   'ruff_fix',
+        --   -- To run the Ruff formatter.
+        --   'ruff_format',
+        --   -- To organize the imports.
+        --   'ruff_organize_imports',
+        -- },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -788,6 +788,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   { import = 'custom.plugins' },
+  --
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
