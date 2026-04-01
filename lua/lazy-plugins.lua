@@ -609,7 +609,11 @@ require('lazy').setup({
           --   end,
           -- },
         },
-        opts = {},
+        opts = {
+          enable_autosnippets = true,
+          store_selection_keys = '<Tab>',
+          update_events = 'TextChanged,TextChangedI',
+        },
       },
       'folke/lazydev.nvim',
     },
